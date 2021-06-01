@@ -1,0 +1,14 @@
+{
+  "name": "interactive-pricing-component-main",
+  "version": "1.0.0",
+  "description": "![Design preview for the Interactive pricing component coding challenge](./design/desktop-preview.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "scss": "sass scss/main.scss:dist/styles.css -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.34.0"
+  }
+}

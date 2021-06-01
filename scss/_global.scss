@@ -1,0 +1,31 @@
+@use 'abstracts' as *;
+@use 'variables' as *;
+
+* { 
+   margin: 0;
+   padding: 0;
+}
+
+*::before,
+*::after {
+   box-sizing: inherit;
+}
+
+html {
+   box-sizing: border-box;
+   font-size: map-get($map: $font-size, $key: medium);
+}
+
+body {
+    font-family: $font-family;
+    background-image: url(/images/bg-pattern.svg);
+}
+
+.page-wrapper {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    gap: rem(50);
+    min-height: 100vh;
+}

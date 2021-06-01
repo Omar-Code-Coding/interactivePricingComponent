@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 0.9375rem;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  background-image: url(/images/bg-pattern.svg);
+}
+
+.page-wrapper {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3.3333333333rem;
+  min-height: 100vh;
+}
+
+/*# sourceMappingURL=styles.css.map */
