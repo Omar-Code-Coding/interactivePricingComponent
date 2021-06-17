@@ -1,0 +1,40 @@
+@use '../abstracts' as *;
+
+body {
+    font-family: $font-family;
+    font-weight: 600;
+}
+
+.heading {
+    color: color-neutral(dark-desturated-blue);
+}
+
+.text {
+    color: color-neutral(grayish-blue);
+}
+
+.btn {
+    font-family: $font-family;
+}
+
+.price-component-slider {
+    &__price-num {
+        font-size: rem(39.26);
+        font-weight: 700;
+        color: color-neutral(dark-desturated-blue);
+    }
+
+    &__pageviews {
+        text-transform: uppercase;
+        letter-spacing: rem(3);
+        font-weight: 700;
+    }
+}
+
+.price-component-discount {
+    &__label {
+        font-size: rem(12);
+        font-weight: 700;
+        color: color-primary(light-red);
+    }
+}

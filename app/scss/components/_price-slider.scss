@@ -1,0 +1,43 @@
+@use '../sections/' as *;
+@use '../abstracts/' as *;
+
+.price-component-slider {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    align-items: center;
+    gap: rem(48) rem(5);
+    
+    &__slider {
+        grid-row: 2 / 3;
+        grid-column: 1 / -1;
+        -webkit-appearance: none;
+        height: rem(10);
+        outline: none;
+        border-radius: rem(20);
+        background: linear-gradient(90deg, color-neutral(light-grayish-blue0) 50%,
+                    color-neutral(light-grayish-blue0) 50%);
+
+        &::-webkit-slider-thumb {
+            height: rem(50);
+            width: rem(50);
+            cursor: pointer;
+            border-radius: 50%;
+            background: url(/images/icon-slider.svg) no-repeat center;
+            background-color: color-primary(strong-cyan);
+            -webkit-appearance: none;
+        }
+    }
+
+    &__price-label {
+        grid-column: 11 / -1;
+    }
+
+    &__price-num {
+        grid-column: 10 / 11;
+    }
+
+    &__pageviews {
+        grid-column: 1 / 7;
+    }
+
+}

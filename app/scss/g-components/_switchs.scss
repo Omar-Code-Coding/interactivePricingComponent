@@ -1,0 +1,51 @@
+@use '../abstracts' as *;
+
+.toggle-switch {
+    > label {
+        position: relative;
+        display: inline-block;
+        width: rem(45);
+        height: rem(25);
+
+        > input {
+            opacity: 0;
+            height: 0;
+            width: 0;
+
+            &:checked + span {
+                background-color: color-primary(strong-cyan);
+            }
+
+            &:checked + span::before {
+                transform: translateX(rem(20));
+            }
+        }
+
+        // Toggle switch background
+        > span {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            cursor: pointer;
+            border-radius: rem(50);
+            background-color: color-neutral(light-grayish-blue1);
+            transition: .5s;
+            
+            // Toggle switch thumb
+            &::before {
+                position: absolute;
+                content: "";
+                width: rem(15);
+                height: rem(15);
+                top: rem(5);
+                left: rem(5);
+                border-radius: 50%;
+                background-color: color-neutral(white);
+                transition: .5s;
+
+            }
+        }
+    }
+}

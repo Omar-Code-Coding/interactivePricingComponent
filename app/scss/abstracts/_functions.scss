@@ -1,0 +1,18 @@
+@use 'variables' as *;
+@use 'sass:math';
+
+@function rem($pixels, $context: 15) {
+    @return math.div($pixels, $context) * 1rem;
+}
+
+@function font-size($size) {
+    @return map-get($map: $font-size, $key: $size);
+}
+
+@function color-primary($color) {
+    @return map-get($map: $color-primary, $key: $color);
+}
+
+@function color-neutral($color) {
+    @return map-get($map: $color-neutral, $key: $color);
+}

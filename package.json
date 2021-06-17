@@ -4,7 +4,7 @@
   "description": "![Design preview for the Interactive pricing component coding challenge](./design/desktop-preview.jpg)",
   "main": "index.js",
   "scripts": {
-    "scss": "sass scss/main.scss:dist/styles.css -w"
+    "scss": "sass app/scss/main.scss:dist/styles.css -w"
   },
   "author": "",
   "license": "ISC",

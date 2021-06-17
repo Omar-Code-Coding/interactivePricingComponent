@@ -15,55 +15,56 @@
   </style>
 </head>
 <body>
-  <script src="range-slider.js"></script>
-  <main class="page-wrapper">
+  
+  <main class="page-wrapper text">
     <header class="header">
-      <h1 class="header__heading">Simple, traffic-based pricing</h1>
+      <h1 class="header__heading heading">Simple, traffic-based pricing</h1>
       <p class="header__sub-heading">Sign-up for our 30-day trial. No credit card required.</p>
     </header>
     
     <section class="price-component">
-      <div class="price-component-range">
-        <!-- Page views label -->
-        <span class="range__label"></span>
-        <label for="slider">Pageviews</label>
-        <!-- Range slider -->
-        <input type="range" min="0" max="4" class="range__slider" id="slider">
-        <!-- Price label -->
-        <span class="range__price"></span>
-        <label for="slider">/month</label>
-
-        <div class="range__price-discount">
-          <span>Monthly Billing</span>
-          <label class="price-discount__check-btn">
-            <input type="checkbox">
-            <!-- Slider thumb -->
+      <div class="price-component-slider">
+                     <!-- Pageviews label -->
+        <label class="price-component-slider__pageviews" id="pageviews-label"></label>
+                    <!-- Range slider -->
+        <input type="range" min="0" max="4" value="0"
+        class="price-component-slider__slider" id="slider">
+                     <!-- Price label -->
+        <label class="price-component-slider__price-num" id="price-label"></label>
+        <label class="price-component-slider__price-label">/ month</label>
+      </div>
+      
+      <!-- Discount Toggle-switch -->
+      <div class="price-component-discount">
+        <p>Monthly Billing</p>
+        <form class="toggle-switch">
+          <label>
+            <input type="checkbox" id="discount-btn">
+            <!-- Toggle thumb -->
             <span></span>
           </label>
-          <span>Yearly Billing</span>
-        </div>
+        </form>
+        <p>Yearly Billing</p>
+        <p class="price-component-discount__label">25% discount</p>
       </div>
-
-      <div class="price-component__features">
-        <ul class="features__list">
+      
+      <div class="price-component-features">
+        <ul class="price-component-features__list">
           <li>Unlimited websites</li>
           <li>100% data ownership</li>
           <li>Email reports</li>
         </ul>
-        <button class="features__btn">Start my trial</button>
+        <button class="btn">Start my trial</button>
       </div>
     </section>
-
-  
+    
+    
     <div class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
       Coded by <a href="#">Your Name Here</a>.
     </div>
   </main>
 
-  <!-- 25% discount -->
-
-  
-  
 </body>
+<script src="/app/js/main.js"></script>
 </html>

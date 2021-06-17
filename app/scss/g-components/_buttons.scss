@@ -1,0 +1,18 @@
+@use '../abstracts' as *;
+
+.btn {
+    padding: rem(12) rem(40);
+    cursor: pointer;
+    outline: 0;
+    border: 0;
+    border-radius: rem(50);
+    color: color-primary(pale-blue);
+    background-color: color-neutral(dark-desturated-blue);
+    box-shadow: 0 0 rem(5) rgba($color: #000000, $alpha: .5);
+    transition: .2s all;
+
+    &:hover {
+        transform: translateY(-5%);
+        box-shadow: 0 rem(2) rem(6) rgba($color: #000000, $alpha: .8);
+    }
+}

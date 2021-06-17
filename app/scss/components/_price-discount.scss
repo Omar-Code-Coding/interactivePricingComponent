@@ -1,0 +1,16 @@
+@use '../abstracts' as *;
+@use '../sections' as *;
+
+.price-component-discount {
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    padding-right: rem(60);
+    gap: rem(18);
+
+    &__label {
+        padding: rem(2) rem(8);
+        border-radius: rem(20);
+        background-color: color-primary(light-grayish-red);
+    }
+}

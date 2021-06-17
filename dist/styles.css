@@ -14,8 +14,98 @@ html {
 }
 
 body {
-  font-family: "Manrope", sans-serif;
   background-image: url(/images/bg-pattern.svg);
+  background-repeat: no-repeat;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+}
+
+.heading {
+  color: #293356;
+}
+
+.text {
+  color: #858fad;
+}
+
+.btn {
+  font-family: "Manrope", sans-serif;
+}
+
+.price-component-slider__price-num {
+  font-size: 2.6173333333rem;
+  font-weight: 700;
+  color: #293356;
+}
+.price-component-slider__pageviews {
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-weight: 700;
+}
+
+.price-component-discount__label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #ff8c66;
+}
+
+.btn {
+  padding: 0.8rem 2.6666666667rem;
+  cursor: pointer;
+  outline: 0;
+  border: 0;
+  border-radius: 3.3333333333rem;
+  color: #bdccff;
+  background-color: #293356;
+  box-shadow: 0 0 0.3333333333rem rgba(0, 0, 0, 0.5);
+  transition: 0.2s all;
+}
+.btn:hover {
+  transform: translateY(-5%);
+  box-shadow: 0 0.1333333333rem 0.4rem rgba(0, 0, 0, 0.8);
+}
+
+.toggle-switch > label {
+  position: relative;
+  display: inline-block;
+  width: 3rem;
+  height: 1.6666666667rem;
+}
+.toggle-switch > label > input {
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+.toggle-switch > label > input:checked + span {
+  background-color: #10d5c2;
+}
+.toggle-switch > label > input:checked + span::before {
+  transform: translateX(1.3333333333rem);
+}
+.toggle-switch > label > span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  cursor: pointer;
+  border-radius: 3.3333333333rem;
+  background-color: #cdd7ee;
+  transition: 0.5s;
+}
+.toggle-switch > label > span::before {
+  position: absolute;
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  top: 0.3333333333rem;
+  left: 0.3333333333rem;
+  border-radius: 50%;
+  background-color: white;
+  transition: 0.5s;
 }
 
 .page-wrapper {
@@ -25,6 +115,83 @@ body {
   align-items: center;
   gap: 3.3333333333rem;
   min-height: 100vh;
+}
+
+.price-component {
+  display: flex;
+  flex-flow: column wrap;
+  max-width: 40rem;
+  border-radius: 0.6666666667rem;
+  box-shadow: 0 0 1.3333333333rem rgba(0, 0, 0, 0.16);
+  background-color: white;
+}
+.price-component > * {
+  padding: 1.6666666667rem 3.3333333333rem;
+}
+
+.price-component-slider {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  align-items: center;
+  gap: 3.2rem 0.3333333333rem;
+}
+.price-component-slider__slider {
+  grid-row: 2/3;
+  grid-column: 1/-1;
+  -webkit-appearance: none;
+  height: 0.6666666667rem;
+  border-radius: 1.3333333333rem;
+  background: linear-gradient(90deg, #eaeefb 50%, #eaeefb 50%);
+}
+.price-component-slider__slider::-webkit-slider-thumb {
+  height: 3.3333333333rem;
+  width: 3.3333333333rem;
+  cursor: pointer;
+  border-radius: 50%;
+  background: url(/images/icon-slider.svg) no-repeat center;
+  background-color: #10d5c2;
+  -webkit-appearance: none;
+}
+.price-component-slider__price-label {
+  grid-column: 11/-1;
+}
+.price-component-slider__price-num {
+  grid-column: 10/11;
+}
+.price-component-slider__pageviews {
+  grid-column: 1/7;
+}
+
+.price-component-discount {
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  padding-right: 4rem;
+  gap: 1.2rem;
+}
+.price-component-discount__label {
+  padding: 0.1333333333rem 0.5333333333rem;
+  border-radius: 1.3333333333rem;
+  background-color: #feece7;
+}
+
+/* Features list */
+.price-component-features {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 0.0666666667rem solid rgba(0, 0, 0, 0.16);
+}
+.price-component-features__list {
+  list-style-type: none;
+  line-height: 2rem;
+}
+.price-component-features__list > *::before {
+  content: url(/images/icon-check.svg);
+  padding-right: 1rem;
+  width: 1rem;
+  height: 1rem;
 }
 
 /*# sourceMappingURL=styles.css.map */
