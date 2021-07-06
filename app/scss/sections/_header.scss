@@ -1,0 +1,16 @@
+@use '../abstracts/' as *;
+
+.header {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    padding: rem(75) 0;
+    margin: 3.5% 0 1.5%;
+    background: url(/images/pattern-circles.svg) no-repeat center / 40%;
+
+    @include media(breakpoint(mobile)) {
+        &__sub-heading {
+            margin: 0 clamp(3.3rem, 26%, 8.25rem);
+        }
+    }
+}
