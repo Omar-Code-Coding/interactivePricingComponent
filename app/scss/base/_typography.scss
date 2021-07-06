@@ -5,6 +5,18 @@ body {
     font-weight: 600;
 }
 
+.header {
+    text-align: center;
+
+    &__heading {
+        line-height: rem(55);
+    }
+
+    &__sub-heading {
+        line-height: rem(30);
+    }
+}
+
 .heading {
     color: color-neutral(dark-desturated-blue);
 }
@@ -14,6 +26,8 @@ body {
 }
 
 .btn {
+    font-size: inherit;
+    font-weight: 700;
     font-family: $font-family;
 }
 
@@ -36,5 +50,15 @@ body {
         font-size: rem(12);
         font-weight: 700;
         color: color-primary(light-red);
+    }
+}
+
+.price-component-features {
+    &__list {
+        line-height: rem(30);
+
+        @include media(breakpoint(mobile)) {
+            text-align: center;
+        }
     }
 }

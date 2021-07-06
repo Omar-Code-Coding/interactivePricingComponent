@@ -6,6 +6,11 @@ $font-size: (
     small: .625rem
 );
 
+$breakpoints: (
+    desktop: 64em, //1024px
+    mobile: 27em //441px
+);
+
 $color-primary: (
     soft-cyan: hsl(174, 77%, 80%), //Full Slider Bar
     strong-cyan: hsl(174, 86%, 45%), //Slider Background

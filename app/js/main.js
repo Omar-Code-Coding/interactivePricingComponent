@@ -8,7 +8,7 @@ const discountValue = 25;
 const prices = [8, 12, 16, 24, 36];
 let discount = false;
 // it loops through an array of prices and calculate the discounted prices
-let discountPrices = prices.map(perecentage);
+const discountPrices = prices.map(perecentage);
 const pageviews = ['10K', '50K', '100K', '500K', '1M'];
 
 init();
@@ -22,8 +22,16 @@ slider.addEventListener('input', () => {
 
 // Intializing Default text
 function init() {
-    priceLabel.textContent = '$8.00';
-    pageviewsLabel.textContent = '10K pageviews';
+    priceLabel.textContent = '$16.00';
+    pageviewsLabel.textContent = '100K pageviews';
+}
+
+function priceDiscount() {
+    priceLabel.textContent = `$${discountPrices[slider.value].toFixed(2)}`;
+}
+
+function price() {
+    priceLabel.textContent = `$${prices[slider.value].toFixed(2)}`;
 }
 
 // Utility function for calculating the Discounted price
@@ -34,7 +42,7 @@ function perecentage(arr) {
 // Changes the Slider's tralling progres bar's color
 function sliderTrack() {
     const sliderValue = slider.value * 25;
-    const color = `linear-gradient(90deg, hsl(174, 86%, 45%) ${sliderValue}%,
+    const color = `linear-gradient(90deg, hsl(174, 77%, 80%) ${sliderValue}%,
                    hsl(224, 65%, 95%) ${sliderValue}%)`;
     return slider.style.background = color;
 }
@@ -59,12 +67,4 @@ function sliderPrice() {
     } else {
         priceDiscount();
     }
-}
-
-function priceDiscount() {
-    priceLabel.textContent = `$${discountPrices[slider.value].toFixed(2)}`;
-}
-
-function price() {
-    priceLabel.textContent = `$${prices[slider.value].toFixed(2)}`;
 }

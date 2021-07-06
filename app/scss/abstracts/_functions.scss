@@ -16,3 +16,7 @@
 @function color-neutral($color) {
     @return map-get($map: $color-neutral, $key: $color);
 }
+
+@function breakpoint($size) {
+    @return map-get($map: $breakpoints, $key: $size);
+}

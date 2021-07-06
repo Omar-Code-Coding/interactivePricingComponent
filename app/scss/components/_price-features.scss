@@ -7,12 +7,18 @@
     flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
+    padding: rem(35) rem(50);
+    // gap: clamp(4rem, 10.90%, 10.6rem);
     border-top: rem(1) solid rgba($color: #000000, $alpha: .16);
-
+    
+    @include media(breakpoint(mobile)) {
+        justify-content: center;
+        gap: rem(25) rem(90);
+    }
+    
     &__list {
         list-style-type: none;
-        line-height: rem(30);
-
+        
         // adds Check icon to List's items
         > *::before {
             content: url(/images/icon-check.svg);
