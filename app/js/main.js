@@ -7,8 +7,9 @@ const discountBtn = document.querySelector('#discount-btn');
 const discountValue = 25;
 const prices = [8, 12, 16, 24, 36];
 let discount = false;
+
 // it loops through an array of prices and calculate the discounted prices
-const discountPrices = prices.map(perecentage);
+const discountPrices = prices.map(arr => (arr * discountValue) / 100);
 const pageviews = ['10K', '50K', '100K', '500K', '1M'];
 
 init();
@@ -26,18 +27,14 @@ function init() {
     pageviewsLabel.textContent = '100K pageviews';
 }
 
-function priceDiscount() {
-    priceLabel.textContent = `$${discountPrices[slider.value].toFixed(2)}`;
-}
-
 function price() {
-    priceLabel.textContent = `$${prices[slider.value].toFixed(2)}`;
+    if (discount !== true) {
+        priceLabel.textContent = `$${prices[slider.value].toFixed(2)}`;
+    } else {
+        priceLabel.textContent = `$${discountPrices[slider.value].toFixed(2)}`;
+    }
 }
 
-// Utility function for calculating the Discounted price
-function perecentage(arr) {
-    return (arr * discountValue) / 100;
-}
 
 // Changes the Slider's tralling progres bar's color
 function sliderTrack() {
@@ -54,17 +51,9 @@ function sliderLabel() {
 // Discount button
 function discountToggle() {
     discount = discount === false ? true : false;
-    if (discount !== true) {
-        price();
-    } else {
-        priceDiscount();
-    }
+    price();
 }
 
 function sliderPrice() {
-    if (discount !== true) {
-        price();
-    } else {
-        priceDiscount();
-    }
+    price();
 }
