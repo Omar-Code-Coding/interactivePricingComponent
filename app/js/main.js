@@ -4,14 +4,20 @@ const slider = document.getElementById('slider');
 const priceLabel = document.getElementById('price-label');
 const pageviewsLabel = document.getElementById('pageviews-label');
 const discountBtn = document.querySelector('#discount-btn');
-const discountValue = 25;
-const prices = [8, 12, 16, 24, 36];
 let discount = false;
-
-// it loops through an array of prices and calculate the discounted prices
-const discountPrices = prices.map(arr => (arr * discountValue) / 100);
-const pageviews = ['10K', '50K', '100K', '500K', '1M'];
-
+const pricesObj = {
+    price: [8, 12, 16, 24, 36],
+    pageview: ['10K', '50K', '100K', '500K', '1M'],
+    discountValue: 25,
+    discountPrice: [],
+    priceDiscount: function () {
+        for (const values of this.price) {
+            this.discountPrice.push((values * this.discountValue) / 100);
+        }
+        return this.discountPrice;
+    }
+}
+pricesObj.priceDiscount();
 init();
 
 discountBtn.addEventListener('input', discountToggle);
@@ -27,14 +33,13 @@ function init() {
     pageviewsLabel.textContent = '100K pageviews';
 }
 
-function price() {
+function definePrice() {
     if (discount !== true) {
-        priceLabel.textContent = `$${prices[slider.value].toFixed(2)}`;
+        priceLabel.textContent = `$${pricesObj.price[slider.value].toFixed(2)}`;
     } else {
-        priceLabel.textContent = `$${discountPrices[slider.value].toFixed(2)}`;
+        priceLabel.textContent = `$${pricesObj.discountPrice[slider.value].toFixed(2)}`;
     }
 }
-
 
 // Changes the Slider's tralling progres bar's color
 function sliderTrack() {
@@ -45,15 +50,15 @@ function sliderTrack() {
 }
 
 function sliderLabel() {
-    pageviewsLabel.textContent = `${pageviews[slider.value]} pageviews`;
+    pageviewsLabel.textContent = `${pricesObj.pageview[slider.value]} pageviews`;
 }
 
 // Discount button
 function discountToggle() {
     discount = discount === false ? true : false;
-    price();
+    definePrice();
 }
 
 function sliderPrice() {
-    price();
+    definePrice();
 }
