@@ -19,38 +19,13 @@ const pricesObj = {
 }
 pricesObj.priceDiscount();
 init();
-
 discountBtn.addEventListener('input', discountToggle);
-slider.addEventListener('input', () => {
-    sliderPrice();
-    sliderTrack();
-    sliderLabel();
-});
+slider.addEventListener('input', sliderTrack, sliderLabel);
 
 // Intializing Default text
 function init() {
     priceLabel.textContent = '$16.00';
     pageviewsLabel.textContent = '100K pageviews';
-}
-
-function definePrice() {
-    if (discount !== true) {
-        priceLabel.textContent = `$${pricesObj.price[slider.value].toFixed(2)}`;
-    } else {
-        priceLabel.textContent = `$${pricesObj.discountPrice[slider.value].toFixed(2)}`;
-    }
-}
-
-// Changes the Slider's tralling progres bar's color
-function sliderTrack() {
-    const sliderValue = slider.value * 25;
-    const color = `linear-gradient(90deg, hsl(174, 77%, 80%) ${sliderValue}%,
-                   hsl(224, 65%, 95%) ${sliderValue}%)`;
-    return slider.style.background = color;
-}
-
-function sliderLabel() {
-    pageviewsLabel.textContent = `${pricesObj.pageview[slider.value]} pageviews`;
 }
 
 // Discount button
@@ -59,6 +34,26 @@ function discountToggle() {
     definePrice();
 }
 
-function sliderPrice() {
+
+// Change the Slider's tralling progress bar's color
+function sliderTrack() {
+    const sliderValue = slider.value * 25;
+    const color = `linear-gradient(90deg, hsl(174, 77%, 80%) ${sliderValue}%,
+    hsl(224, 65%, 95%) ${sliderValue}%)`;
+    return slider.style.background = color;
+}
+
+// Change Slider related labels (Price, Pageviews)
+function sliderLabel() {
     definePrice();
+    return pageviewsLabel.textContent = `${pricesObj.pageview[slider.value]} pageviews`;
+}
+
+// Check if Discount button was pressed
+function definePrice() {
+    if (discount !== true) {
+        priceLabel.textContent = `$${pricesObj.price[slider.value].toFixed(2)}`;
+    } else {
+        priceLabel.textContent = `$${pricesObj.discountPrice[slider.value].toFixed(2)}`;
+    }
 }
