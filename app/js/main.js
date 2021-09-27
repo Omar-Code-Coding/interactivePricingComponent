@@ -16,11 +16,20 @@ const pricesObj = {
         }
         return this.discountPrice;
     }
+    // priceDiscount() {
+    //     this.price.forEach(price => {
+    //         this.discountPrice.push((price * this.discountValue) / 100);
+    //     })
+    //     return this.discountPrice;
+    // }
 }
-pricesObj.priceDiscount();
 init();
+pricesObj.priceDiscount();
 discountBtn.addEventListener('input', discountToggle);
-slider.addEventListener('input', sliderTrack, sliderLabel);
+slider.addEventListener('input', () => {
+    sliderTrack();
+    sliderLabel();
+});
 
 // Intializing Default text
 function init() {
@@ -45,7 +54,7 @@ function sliderTrack() {
 
 // Change Slider related labels (Price, Pageviews)
 function sliderLabel() {
-    definePrice();
+    definePrice()
     return pageviewsLabel.textContent = `${pricesObj.pageview[slider.value]} pageviews`;
 }
 
