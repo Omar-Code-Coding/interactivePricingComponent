@@ -16,19 +16,13 @@ const pricesObj = {
         }
         return this.discountPrice;
     }
-    // priceDiscount() {
-    //     this.price.forEach(price => {
-    //         this.discountPrice.push((price * this.discountValue) / 100);
-    //     })
-    //     return this.discountPrice;
-    // }
-}
+};
 init();
 pricesObj.priceDiscount();
 discountBtn.addEventListener('input', discountToggle);
 slider.addEventListener('input', () => {
     sliderTrack();
-    sliderLabel();
+    sliderLabel(priceLabel, pageviewsLabel);
 });
 
 // Intializing Default text
@@ -40,7 +34,7 @@ function init() {
 // Discount button
 function discountToggle() {
     discount = discount === false ? true : false;
-    definePrice();
+    definePrice(priceLabel);
 }
 
 
@@ -53,16 +47,16 @@ function sliderTrack() {
 }
 
 // Change Slider related labels (Price, Pageviews)
-function sliderLabel() {
-    definePrice()
-    return pageviewsLabel.textContent = `${pricesObj.pageview[slider.value]} pageviews`;
+function sliderLabel(el1, el2) {
+    definePrice(el1)
+    return el2.textContent = `${pricesObj.pageview[slider.value]} pageviews`;
 }
 
 // Check if Discount button was pressed
-function definePrice() {
+function definePrice(el) {
     if (discount !== true) {
-        priceLabel.textContent = `$${pricesObj.price[slider.value].toFixed(2)}`;
+        el.textContent = `$${pricesObj.price[slider.value].toFixed(2)}`;
     } else {
-        priceLabel.textContent = `$${pricesObj.discountPrice[slider.value].toFixed(2)}`;
+        el.textContent = `$${pricesObj.discountPrice[slider.value].toFixed(2)}`;
     }
 }
