@@ -10,6 +10,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
   <title>Frontend Mentor | Interactive pricing component</title>
+  <!-- <script defer src="/app/js/main.js"></script> -->
+  <script defer src="/app/js/main.js"></script>
 
 </head>
 
@@ -24,12 +26,12 @@
     <section class="price-component">
       <div class="price-component-slider">
         <!-- Pageviews label -->
-        <label class="price-component-slider__pageviews" id="pageviews-label"></label>
+        <label class="price-component-slider__pageviews" for="slider">100K pageviews</label>
         <!-- Range slider -->
         <input type="range" min="0" max="4" value="2" class="price-component-slider__slider" id="slider">
         <!-- Price label -->
-        <label class="price-component-slider__price-num" id="price-label"></label>
-        <label class="price-component-slider__price-label" id="pricing-interval"></label>
+        <label class="price-component-slider__price-num" for="slider">$16.00</label>
+        <label class="price-component-slider__price-label" for="slider">/ month</label>
       </div>
 
       <!-- Discount Toggle-switch -->
@@ -62,8 +64,6 @@
       Coded by <a href="https://github.com/Omar-Code-Coding">Omar Yasser</a>.
     </div>
   </main>
-
-  <script src="/app/js/main.js"></script>
 </body>
 
 </html>
