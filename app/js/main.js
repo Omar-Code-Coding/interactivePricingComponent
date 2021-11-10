@@ -20,8 +20,8 @@ class App {
         this._setDiscountPrices()
     }
 
-    // Change track's trailing color based on the value of the slider
-    _changeTrackColor() {
+    // Change trailing track's color based on the value of the slider
+    _changeTrailingTrackColor() {
         const mult = 25;
         const color = `
             linear-gradient(90deg, hsl(174, 77%, 80%) ${slider.value * mult}%,
@@ -30,7 +30,7 @@ class App {
         return slider.style.background = color;
     }
 
-    // Define discount if the discountSwitch is clicked
+    // Define discount if the discountSwitch is On
     _toggleDiscount() {
         this.#discount = this.#discount === false ? true : false;
         this._renderPriceAndIntervalLabel();
