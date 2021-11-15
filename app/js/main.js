@@ -24,7 +24,6 @@ class App {
         slider.addEventListener('input', this._changeTrailingTrackColor.bind(this))
         slider.addEventListener('input', this._renderPriceAndIntervalLabel.bind(this))
         discountSwitch.addEventListener('input', this._toggleDiscount.bind(this));
-        this._setDiscountPrices()
     }
 
     // Change trailing track's color based on the value of the slider
