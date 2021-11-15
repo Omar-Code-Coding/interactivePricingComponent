@@ -9,12 +9,19 @@ const discountSwitch = document.querySelector('#discount-btn');
 class App {
     #discount = false;
     #discountValue = 25;
-    #prices = [8, 12, 16, 24, 36];
-    #pageviews = ['10K', '50K', '100K', '500K', '1M'];
-    #discountPrices;
+    #pricesAndPageviews = {
+        '10K': 8,
+        '50K': 12,
+        '100K': 16,
+        '500K': 24,
+        '1M': 36
+    };
+    // #prices = [8, 12, 16, 24, 36];
+    // #pageviews = ['10K', '50K', '100K', '500K', '1M'];
+    // #discountPrices;
 
     constructor() {
-        slider.addEventListener('input', this._changeTrackColor.bind(this))
+        slider.addEventListener('input', this._changeTrailingTrackColor.bind(this))
         slider.addEventListener('input', this._renderPriceAndIntervalLabel.bind(this))
         discountSwitch.addEventListener('input', this._toggleDiscount.bind(this));
         this._setDiscountPrices()
@@ -38,19 +45,27 @@ class App {
 
     // Render the price and interval
     _renderPriceAndIntervalLabel() {
-        const interval = this.#discount ? '/ year' : '/ month';
-        const price = this.#discount ? this.#discountPrices : this.#prices;
+        const discountPrice = i => ((i * 12) * this.#discountValue) / 100;
 
-        priceLabel.textContent = `$${price[slider.value].toFixed(2)}`;
+        const interval = this.#discount ? '/ year' : '/ month';
+        const pageviews = Object.keys(this.#pricesAndPageviews)[slider.value];
+        const price = this.#pricesAndPageviews[`${pageviews}`];
+        const definePrice = this.#discount ? discountPrice(price) : price;
+
         pricingInterval.textContent = interval;
-        pageviewsLabel.textContent = `${this.#pageviews[slider.value]} pageviews`;
+        priceLabel.textContent = `$${definePrice.toFixed(2)}`;
+        pageviewsLabel.textContent = `${pageviews} pageviews`;
+
+        // const price = this.#discount ? this.#discountPrices : this.#prices;
+        // priceLabel.textContent = `$${price[slider.value].toFixed(2)}`;
+        // pageviewsLabel.textContent = `${this.#pageviews[slider.value]} pageviews`;
     }
 
     // Set discountPrice's array values
     _setDiscountPrices() {
-        return this.#discountPrices = this.#prices.map(
-            i => ((i * 12) * this.#discountValue) / 100
-        );
+        // return this.#discountPrices = this.#prices.map(
+        //     i => ((i * 12) * this.#discountValue) / 100
+        // );
     }
 }
 
