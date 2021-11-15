@@ -62,11 +62,11 @@ class App {
     }
 
     // Set discountPrice's array values
-    _setDiscountPrices() {
-        // return this.#discountPrices = this.#prices.map(
-        //     i => ((i * 12) * this.#discountValue) / 100
-        // );
-    }
+    // _setDiscountPrices() {
+    //     return this.#discountPrices = this.#prices.map(
+    //         i => ((i * 12) * this.#discountValue) / 100
+    //     );
+    // }
 }
 
 const app = new App();
