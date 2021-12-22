@@ -46,9 +46,16 @@ class App {
     _renderPriceAndIntervalLabel() {
         const discountPrice = i => ((i * 12) * this.#discountValue) / 100;
 
+        // Set interval's value if "#discount" is true or false
         const interval = this.#discount ? '/ year' : '/ month';
+
+        // Change pageviews's value based on the Slider
         const pageviews = Object.keys(this.#pricesAndPageviews)[slider.value];
+
+        // Access price in "#pricesAndPageviews" based on "pageviews" value
         const price = this.#pricesAndPageviews[`${pageviews}`];
+
+        // Discount the price if "#discount" is true, else the price is normal
         const definePrice = this.#discount ? discountPrice(price) : price;
 
         pricingInterval.textContent = interval;
