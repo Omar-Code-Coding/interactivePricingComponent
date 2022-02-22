@@ -16,22 +16,23 @@
         outline: none;
         border-radius: rem(20);
         background: linear-gradient(90deg, color-primary(soft-cyan) 50%,
-                    color-neutral(light-grayish-blue0) 50%);
+        color-neutral(light-grayish-blue0) 50%);
+        
+    }
 
-        &::-webkit-slider-thumb {
-            height: rem(50);
-            width: rem(50);
-            cursor: pointer;
-            border-radius: 50%;
-            box-shadow: 0 rem(15) rem(28) lighten($color: color-primary(strong-cyan), $amount: 20);
-            // Slider's icon
-            background: url(/images/icon-slider.svg) no-repeat center;
-            background-color: color-primary(strong-cyan);
-            -webkit-appearance: none;
+    > input[type=range]::-webkit-slider-thumb, > input[type=range]::-moz-range-thumb {
+        height: rem(50);
+        width: rem(50);
+        cursor: pointer;
+        border-radius: 50%;
+        box-shadow: 0 rem(15) rem(28) lighten($color: color-primary(strong-cyan), $amount: 20);
+        // Slider's icon
+        background: url(/images/icon-slider.svg) no-repeat center;
+        background-color: color-primary(strong-cyan);
+        -webkit-appearance: none;
 
-            &:active {
-                background-color: darken($color: color-primary(strong-cyan), $amount: 10)
-            }
+        &:active {
+            background-color: darken($color: color-primary(strong-cyan), $amount: 10)
         }
     }
 
