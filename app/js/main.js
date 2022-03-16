@@ -6,19 +6,19 @@ class App {
   #prices = [8, 12, 16, 24, 36];
   #plans = new Map();
 
-  constructor(
-    sliderCL,
-    priceLabelCL,
-    pageviewsLabelCL,
-    pricingIntervalCL,
-    discountBtnCL
-  ) {
+  constructor() {
     // Elements
-    this.slider = document.querySelector(sliderCL);
-    this.priceLabel = document.querySelector(priceLabelCL);
-    this.pageviewsLabel = document.querySelector(pageviewsLabelCL);
-    this.pricingInterval = document.querySelector(pricingIntervalCL);
-    this.discountToggle = document.querySelector(discountBtnCL);
+    this.slider = document.querySelector("#slider");
+    this.priceLabel = document.querySelector(
+      ".price-component-slider__price-num"
+    );
+    this.pageviewsLabel = document.querySelector(
+      ".price-component-slider__pageviews"
+    );
+    this.pricingInterval = document.querySelector(
+      ".price-component-slider__price-label"
+    );
+    this.discountToggle = document.querySelector("#discount-btn");
 
     // Events
     this.slider.addEventListener(
@@ -94,10 +94,4 @@ class App {
   }
 }
 
-const app = new App(
-  "#slider",
-  ".price-component-slider__price-num",
-  ".price-component-slider__pageviews",
-  ".price-component-slider__price-label",
-  "#discount-btn"
-);
+const app = new App();
